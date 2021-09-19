@@ -16,6 +16,8 @@ namespace Basket.API {
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services) {
 
+			services.AddStackExchangeRedisCache(o => o.Configuration = Configuration.GetValue<string>("CacheSettings:ConnectionString"));
+
 			services.AddControllers();
 			services.AddSwaggerGen(c => {
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Basket.API", Version = "v1" });
