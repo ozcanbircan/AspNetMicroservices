@@ -16,7 +16,7 @@ namespace Discount.API.Extensions {
 				var logger = services.GetRequiredService<ILogger<TContext>>();
 
 				try {
-					logger.LogInformation("Migration postresql database.");
+					logger.LogInformation("Migrating postresql database.");
 
 					using var connection = new NpgsqlConnection(configuration.GetValue<string>("DatabaseSettings:ConnectionString"));
 					connection.Open();
