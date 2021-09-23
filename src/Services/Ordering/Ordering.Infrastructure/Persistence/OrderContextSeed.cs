@@ -19,7 +19,7 @@ namespace Ordering.Infrastructure.Persistence {
 		private static IEnumerable<Order> GetPreconfiguredOrders() {
 			return new List<Order> {
 				new Order {
-					UserName = "swn", FirstName = "Ozcan", LastName = "Bircan", EmailAddress = "ozcanbircan@gmail.com",
+					UserName = "swn", FirstName = "Ozcan", LastName = "Bircan", EmailAddress = "ozcan@gmail.com",
 					AddressLine = "Willow Glen", Country = "U.S.", TotalPrice = 350
 				}
 			};

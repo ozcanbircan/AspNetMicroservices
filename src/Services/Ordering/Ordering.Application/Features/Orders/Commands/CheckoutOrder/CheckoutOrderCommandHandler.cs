@@ -36,7 +36,7 @@ namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder {
 
 		private async Task SendMail(Order order) {
 			try {
-				var email = new Email { To = "ozcanbircan@gmail.com", Body = "Order was created.", Subject = "Order was created" };
+				var email = new Email { To = "ozcan@gmail.com", Body = "Order was created.", Subject = "Order was created" };
 				await _emailService.SendEmail(email);
 			}
 			catch (Exception ex) {
