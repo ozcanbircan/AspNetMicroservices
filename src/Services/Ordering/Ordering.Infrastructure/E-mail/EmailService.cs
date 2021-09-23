@@ -29,8 +29,6 @@ namespace Ordering.Infrastructure.E_mail {
 
 			var client = new SendGridClient(_emailSettings.ApiKey);
 			Response response = await client.SendEmailAsync(message);
-
-
 			if (response.StatusCode is HttpStatusCode.Accepted or HttpStatusCode.OK) {
 				_logger.LogInformation("Email sent successfully.");
 				return true;
