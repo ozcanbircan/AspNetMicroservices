@@ -17,26 +17,17 @@ namespace AspnetRunBasics {
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services) {
-			#region database services
-
-			//// use in-memory database
-			//services.AddDbContext<AspnetRunContext>(c =>
-			//    c.UseInMemoryDatabase("AspnetRunConnection"));
+			// use in-memory database
+			services.AddDbContext<AspnetRunContext>(c => c.UseInMemoryDatabase("AspnetRunConnection"));
 
 			// add database dependency
-			services.AddDbContext<AspnetRunContext>(c => c.UseSqlServer(Configuration.GetConnectionString("AspnetRunConnection")));
-
-			#endregion
-
-			#region project services
-
+			//services.AddDbContext<AspnetRunContext>(c => c.UseSqlServer(Configuration.GetConnectionString("AspnetRunConnection")));
+			
 			// add repository dependency
 			services.AddScoped<IProductRepository, ProductRepository>();
 			services.AddScoped<ICartRepository, CartRepository>();
 			services.AddScoped<IOrderRepository, OrderRepository>();
 			services.AddScoped<IContactRepository, ContactRepository>();
-
-			#endregion
 
 			services.AddRazorPages();
 		}
